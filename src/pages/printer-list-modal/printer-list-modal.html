@@ -1,0 +1,20 @@
+<ion-header color="primary" align="center">
+    <ion-navbar>
+        <ion-title>{{'impressao.impressoras' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+  <br />
+  <ion-list>
+    <button ion-button full large *ngFor="let item of printerList" (tap)="select(item)">
+      {{item.name}} {{item.id}}
+    </button>
+  </ion-list>
+</ion-content>
+<ion-footer>
+    <ion-row>
+        <ion-col>
+            <button ion-button full (click)="voltar()">{{'impressao.voltar' | translate}}</button>
+        </ion-col>
+    </ion-row>
+</ion-footer>

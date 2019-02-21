@@ -1,0 +1,144 @@
+{
+    "load": "Loading...",
+    "cancelText": "Cancel",
+    "doneText": "Select",
+    "okText": "Select",
+    "pesquisar": "Search",
+    "toast": {
+        "login": "Invalid User",
+        "error": "ERROR: ",
+        "errorMessage": "No internet connection...",
+        "campos": "Please: Fill in all fields",
+        "msgTransporte": "Please: Confirm transport information",
+        "msgClassificacao": "Please: Confirm classification information",
+        "msgTransClass": "Please: Confirm transport and classification information",
+        "msgEnviar": "Sending...",
+        "onNoBLEFound": "No Bluetooth found",
+        "valorRecebido": "Amount received! Choose the next Factor",
+        "semPeso": "Please, check out the sample weight",
+        "semImpureza": "Please, check out the sample impurity",
+        "lido" : "This factor has already been filled"
+    },
+    "login": {
+        "login": "Your Registry",
+        "senha": "Your Password",
+        "entrar": "Login"
+    },
+    "principal": {
+        "inout": "Receiving/Dispatch",
+        "in": "Receiving",
+        "out": "Dispatch",
+        "laudo": "Report",
+        "data": "Date",
+        "placa": "License plate",
+        "placamask": "############",
+        "os": "Service Order",
+        "produto": "Product",
+        "sair": "Exit",
+        "todos": "All",
+        "novolaudo": "New Report"
+    },
+    "tabs": {
+        "transporte": "Transport",
+        "classificacao": "Rating",
+        "observacoes": "Observations"
+    },
+    "escolha": {
+        "caminhao": "TRUCK",
+        "container": "CONTAINER",
+        "trem": "TRAIN"
+    },
+    "transporte": {
+        "notaFiscal": "Invoice",
+        "textobarcode": "Align the barcode to the redline for scanning.",
+        "cliente": "Customer",
+        "cidade": "City",
+        "furos": "Holes",
+        "lacres": "Seals",
+        "confirmarinfo": "Confirm Information",
+        "editarinfo": "Edit Information",
+        "erroLocal": "Error getting location: ", 
+        "conectaCaixa": "Connect to a box",
+        "tipo": "Type"
+    },
+    "classificacao": {
+        "tipoproduto": "Product type",
+        "umidade": "HUMIDITY",
+        "impurezas": "IMPURITIES",
+        "queimado": "BURNED",
+        "ardido": "ARDIDO",
+        "mofado": "MUSTY",
+        "avariado": "DAMAGED",
+        "esverdeado": "GREENISH",
+        "quebrado": "BROKEN/AMAZED"
+    },
+    "classificador": {
+        "obs": "Observations",
+        "emitir": "Issue Report",
+        "voltar": "Regreso"
+    },
+    "fotos": {
+        "foto": "PICTURE"
+    },
+    "breve" : "Coming soon",
+    "pesquisa": {
+        "laudo": "REPORT"
+    },
+    "ble": {
+        "seleciona": "Select a box:",
+        "load": "Connecting BlueTooth...",
+        "search": "Searching available BlueTooths...",
+        "noDevice": "No device connected! Please connectto some.",
+        "alreadyConnected": "Already connected to a device.",
+        "error": "There was a problem with the amount receive. Please, try again.",
+        "fator": "Factor sent! Weigh and press 'print'.",
+        "notPossible": "No se pudo conectar en ",
+        "connectOn": "Conectado en "
+    },
+    "laudo": {
+        "placa": "Plate",
+        "cliente": "Client",
+        "municipio": "City",
+        "obs": "No Observations",
+        "auditado": "Audited by"
+    },
+    "impressao": {
+        "selecionar": "Select a printer",
+        "nselecionar": "No printer",
+        "imprimir": "Print",
+        "impressoras": "Printers",
+        "erroselect": "Error while selecting printer!",
+        "ok": "OK",
+        "conexao": "Connection Error!",
+        "selecionada": " selected",
+        "sucesso": "Printed successfully!",
+        "concluir": "Conclude",
+        "voltar": "Back"
+    },
+    "selectOptions":{
+        "Pesquisa":{
+            "subtitulo": "Choose a Search mode"
+        },
+        "RecSai":{
+            "subtitulo": "Choose Between Receiving or Exit"
+        },
+        "OS":{
+            "subtitulo": "Choose a Service Order"
+        },
+        "Produtos":{
+            "subtitulo": "Choose a Product"
+        }
+    },
+    "pesoAmostra" : "SAMPLE WEIGHT",
+    "optionsPhoto" :{
+        "see"       : "View photo",
+        "remove"    : "Remove photo",
+        "save"      : "Save photo to gallery",
+        "seeError"  : "No photo found",
+        "saveOk"    : "Saved photo to gallery",
+        "saveError" : "Error saving photo in gallery",
+        "sendImageError" : "Error sending image ",
+        "photo"          : "Photo ",
+        "sendImage"      : " sent successfully"
+    }
+}

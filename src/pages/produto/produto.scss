@@ -1,0 +1,62 @@
+page-produto {
+    [ion-fixed]{
+        height: 100%
+    }   
+    
+    .factorName{
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+        width: 50%;
+        font-size: 20px ;
+    }
+
+    .factor_green{
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+        width: 40%;
+        font-size: 20px;
+        p{
+            color: green;
+        }
+    }
+    .factor_red{
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+        width: 40%;
+        font-size: 20px;
+        color: red;
+    }
+    .unity{
+        border: 1px solid #dddddd;
+        text-align: center;
+        padding: 8px;
+        width: 10%;
+        font-size: 20px;
+    }
+
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .factors{
+        box-shadow: none;
+        border: 1px solid #dddddd;
+        border-radius: 0px;
+        margin-bottom: 30px;
+    }
+
+    [padding] .scroll-content{
+        padding: 12px !important;
+        margin-top: 75px !important ;
+    }
+    
+}
+

@@ -1,0 +1,149 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #821D25,
+  //primary:    #f36f21,
+  secondary:  rgba(130, 29, 37, 0.5),
+  danger:     #f53d3d,
+  select:     rgb(0, 230, 0),
+  light:      #f4f4f4,
+  dark:       #222,
+  amspec:     #821D25,
+  //amspec:     #f36f21,
+  cinza:      #888
+);
+
+  $toolbar-background: #821D25; //AMSPEC
+  //$toolbar-background: #f36f21; //SGS
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+//@import "ionic.ionicons";
+@import "ionicons";
+
+// Fonts
+// --------------------------------------------------
+
+@import "roboto";
+@import "noto-sans";
+
+
+.loading-ios .loading-wrapper{
+  background: transparent !important;
+}
+
+.loading-ios .spinner-crescent circle{
+  stroke: #821D25 !important;
+}
+
+.loading-md .loading-wrapper{
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.loading-md .spinner-crescent circle{
+  stroke: #821D25 !important;
+}
+
+.alert-md .alert-wrapper{
+  border-radius: 13px !important;
+  overflow: hidden !important;
+  max-width: 270px !important;
+  background-color: #f8f8f8 !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
+.alert-md .alert-head{
+  text-align: center !important;
+  padding: 12px 16px 7px !important;
+}
+
+.alert-md .alert-sub-title{
+  font-size: 14px !important;
+  color: #666 !important;
+}
+
+.alert-md .alert-message:empty{
+  padding: 0 0 12px !important;
+}
+
+.alert-md .alert-message{
+  max-height: 240px !important;
+} 
+
+.has-refresher > .scroll-content{
+  border-top: 0px !important;  
+}
+
+.scroll-content {
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  padding-bottom: 0!important;
+}

@@ -1,0 +1,64 @@
+<ion-content padding>
+  <ion-row>
+    <ion-item>
+      <ion-label color="primary" stacked>{{'classificador.obs' | translate}}</ion-label> 
+      <ion-textarea [(ngModel)]="observacoes" rows="10"></ion-textarea>
+    </ion-item>
+  </ion-row>
+  <ion-item>
+    <ion-row>
+      <ion-col align="center">
+        <button class="buttonCam" [ngStyle]="{'background-color': themeColors[0]}" (tap)="photo(0)" (press)="optionsPhoto(0)" ion-button>
+          <ion-icon name="camera"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col align="center">
+        <button class="buttonCam" [ngStyle]="{'background-color': themeColors[1]}" (tap)="photo(1)" (press)="optionsPhoto(1)" ion-button>
+          <ion-icon name="camera"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col align="center">
+        <button class="buttonCam" [ngStyle]="{'background-color': themeColors[2]}" (tap)="photo(2)" (press)="optionsPhoto(2)" ion-button>
+          <ion-icon name="camera"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col align="center">
+        <button class="buttonCam" [ngStyle]="{'background-color': themeColors[3]}" (tap)="photo(3)" (press)="optionsPhoto(3)" ion-button>
+          <ion-icon name="camera"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col align="center">
+        <button class="buttonCam" [ngStyle]="{'background-color': themeColors[4]}" (tap)="photo(4)" (press)="optionsPhoto(4)" ion-button>
+          <ion-icon name="camera"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col align="center">
+        <button class="buttonCam" [ngStyle]="{'background-color': themeColors[5]}" (tap)="photo(5)" (press)="optionsPhoto(5)" ion-button>
+          <ion-icon name="camera"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col align="center">
+        <button class="buttonCam" [ngStyle]="{'background-color': themeColors[6]}" (tap)="photo(6)" (press)="optionsPhoto(6)" ion-button>
+          <ion-icon name="camera"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col align="center">
+        <button class="buttonCam" [ngStyle]="{'background-color': themeColors[7]}" (tap)="photo(7)" (press)="optionsPhoto(7)" ion-button>
+          <ion-icon name="camera"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+</ion-content>
+<ion-footer>
+  <ion-row>
+    <ion-col>
+      <button ion-button full color="cinza" (click)="exit()">{{'cancelText' | translate}}</button>
+    </ion-col>
+    <ion-col>
+      <button ion-button full class="newReport" (click)="novoLaudo()">{{this.textButton}}</button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

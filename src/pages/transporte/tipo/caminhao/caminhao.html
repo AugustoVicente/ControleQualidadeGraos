@@ -1,0 +1,98 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button (click)="voltar()">
+            <ion-icon name="ios-arrow-back"></ion-icon>
+        </button>
+    </ion-navbar>
+</ion-header>
+<ion-content padding scroll="false">
+    <div>
+        <ion-grid>
+            <ion-row>
+                <ion-col col-auto style="display: flex; align-items: center;">
+                    <ion-toggle [(ngModel)]="notaFiscalDisable" [disabled]="desabilitar"></ion-toggle>
+                </ion-col>
+                <ion-col>
+                    <ion-row>
+                        <ion-input type="number" [disabled]="!notaFiscalDisable" [(ngModel)]="notaFiscal" placeholder="{{'transporte.notaFiscal' | translate}}"></ion-input>
+                    </ion-row>
+                </ion-col>
+                <ion-col col-auto>
+                    <button ion-button color="amspec" [disabled]="!notaFiscalDisable" (click)="openScanner()">
+                        <ion-icon name="ai-scanning-barcode"></ion-icon>
+                    </button>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-row class="inouts">
+                        <ion-select class="inout" [disabled]="desabilitar" placeholder="{{'principal.inout' | translate}}" interface="alert" cancelText="{{'cancelText' | translate}}"
+                            okText="{{'okText' | translate}}" [(ngModel)]="entradaSaida" [selectOptions]='this.funcBasicProv.selectOptions("selectOptions.RecSai.subtitulo","ios")'>
+                            <ion-option value="{{'principal.in' | translate}}">{{'principal.in' | translate}}</ion-option>
+                            <ion-option value="{{'principal.out' | translate}}">{{'principal.out' | translate}}</ion-option>
+                        </ion-select>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-row>
+                        <ion-select (ionChange)="selecionaOs(os)" class="inout" placeholder="{{'principal.os' | translate}}" interface="alert" [(ngModel)]="os" [disabled]="desabilitar"
+                            cancelText="{{'cancelText' | translate}}" okText="{{'okText' | translate}}" [selectOptions]='this.funcBasicProv.selectOptions("selectOptions.OS.subtitulo","ios")'>
+                            <ion-option *ngFor="let osu of todasOs" [value]="osu.id">{{osu.numOS}}</ion-option>
+                        </ion-select>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-row>
+                        <ion-input type="text" [disabled]="true" placeholder="{{'transporte.cliente' | translate}}" [(ngModel)]="clienteNome" uppercase></ion-input>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-row>
+                        <ion-textarea type="text" [disabled]="true" placeholder="{{'transporte.cidade' | translate}}" [(ngModel)]="municipio" uppercase></ion-textarea>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+            <ion-row>       
+                <ion-input col-11 type="text" [disabled]="desabilitar" [brmasker]="{mask:'AAA-0000', len:8}" placeholder="{{'principal.placa' | translate}}" [(ngModel)]="placa1" uppercase></ion-input>
+                <ion-icon col-1 [name]="placactrl1" color="secondary" (click)="controla_placa(1);" class="addicon"></ion-icon>
+            </ion-row>
+            <ion-row *ngIf="ativa_placa_2">       
+                <ion-input col-11 type="text" [disabled]="desabilitar" [brmasker]="{mask:'AAA-0000', len:8}" placeholder="{{'principal.placa' | translate}}" [(ngModel)]="placa2" uppercase></ion-input>
+                <ion-icon  col-1 [name]="placactrl2" color="secondary" class="addicon" (click)="controla_placa(2);"></ion-icon>
+            </ion-row>
+            <ion-row *ngIf="ativa_placa_3">       
+                <ion-input col-9 type="text" [disabled]="desabilitar" [brmasker]="{mask:'AAA-0000', len:8}" placeholder="{{'principal.placa' | translate}}" [(ngModel)]="placa3" uppercase></ion-input>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <ion-row>
+                        <ion-input type="text" [disabled]="desabilitar" placeholder="{{'transporte.lacres' | translate}}" [(ngModel)]="lacres" uppercase></ion-input>
+                    </ion-row>
+                </ion-col>
+                <ion-col>
+                    <ion-row>
+                        <ion-input type="number" [disabled]="desabilitar" placeholder="{{'transporte.furos' | translate}}" [(ngModel)]="furos"></ion-input>
+                    </ion-row>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+</ion-content>
+<ion-footer style="background-color: #FFF;">
+    <ion-row *ngIf="!desabilitar">
+        <ion-col>
+            <button ion-button full (click)="enviar()">{{'transporte.confirmarinfo' | translate}}</button>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col *ngIf="desabilitar">
+            <button ion-button full color="cinza" (click)="editar()">{{'transporte.editarinfo' | translate}}</button>
+        </ion-col>
+    </ion-row>
+</ion-footer>

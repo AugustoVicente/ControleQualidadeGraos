@@ -1,0 +1,35 @@
+<ion-content class="login-content" padding scroll="false">
+
+  <ion-row class="logo-row">
+    <ion-col class="img">
+      <img class="logo" src="./assets/imgs/sbr_logo.png" />
+    </ion-col>
+  </ion-row>
+
+  <div class="login-box">
+    <ion-row>
+      <ion-col class="boxLogin">
+        <ion-row>
+          <ion-input class="transparent login" type="text" [(ngModel)]="login" placeholder="{{'login.login' | translate}}"></ion-input>
+        </ion-row>
+        <ion-row>
+          <ion-input class="transparent senha" type="password" [(ngModel)]="pass" placeholder="{{'login.senha' | translate}}"></ion-input>
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </div>
+
+  <ion-fab right bottom>
+    <button ion-fab><ion-icon name="md-options"></ion-icon></button>
+    <ion-fab-list side="left">
+      <button ion-fab (click)="select('en')"><b>EN</b></button>
+      <button ion-fab (click)="select('es')"><b>ES</b></button>
+      <button ion-fab (click)="select('pt-br')"><b>PT</b></button>
+    </ion-fab-list>
+  </ion-fab>
+  
+</ion-content>
+
+<ion-footer>
+  <button (click)="logar()" class="btnLogin" color="dark" ion-button full>{{'login.entrar' | translate}}</button>
+</ion-footer>

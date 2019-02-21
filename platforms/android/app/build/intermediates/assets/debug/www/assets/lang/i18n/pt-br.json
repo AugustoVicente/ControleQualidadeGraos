@@ -1,0 +1,144 @@
+{
+    "load": "Carregando...",
+    "cancelText": "Cancelar",
+    "doneText": "Selecionar",
+    "okText": "Selecionar",
+    "pesquisar": "Pesquisar",
+    "toast": {
+        "login": "Usuário Inválido",
+        "error": "ERRO: ",
+        "errorMessage": "Sem conexão de internet...",
+        "campos": "Por favor: Preencher todos os campos",
+        "msgTransporte": "Por favor: Confirmar as informações de transporte",
+        "msgClassificacao": "Por favor: Confirmar as informações de classificação",
+        "msgTransClass": "Por favor: Confirmar as informações de transporte e classificação",
+        "msgEnviar": "Enviando...",
+        "onNoBLEFound": "Nenhum Bluetooth Encontrado",
+        "valorRecebido": "Valor recebido! Escolha o próximo Fator",
+        "semPeso": "Por favor, verifique o peso da amostra",
+        "semImpureza": "Por favor, verifique a quantidade de impurezas",
+        "lido" : "Este fator já foi preenchido"
+    },
+    "login": {
+        "login": "Informe seu Registro",
+        "senha": "Informe sua Senha",
+        "entrar": "Entrar"
+    },
+    "ble": {
+        "seleciona": "Selecione uma caixa:",
+        "load": "Conectando BlueTooth...",
+        "search": "Procurando BlueTooths disponíveis...",
+        "noDevice": "Nenhum dispositivo conectado! Por favor mse conecte em algum.",
+        "alreadyConnected": "Já está conectado a um dispositivo.",
+        "error": "Houve um problema com o recebimento da amostra. Por favor tente novamente",
+        "fator": "Fator enviado! Faça a pesagem e aperte 'imprimir'.",
+        "notPossible": "Não foi possivel conectar em ",
+        "connectOn": "Conectado em "
+    },
+    "principal": {
+        "inout": "Recebimento/Saída",
+        "in": "Recebimento",
+        "out": "Saida",
+        "laudo": "Laudo",
+        "data": "Data",
+        "placa": "AAA - 1010",
+        "placamask": "AAA-9999",
+        "os": "Ord. Servico",
+        "produto": "Produto",
+        "sair": "Sair",
+        "todos": "Todos",
+        "novolaudo": "Novo Laudo"
+    },
+    "tabs": {
+        "transporte": "Transporte",
+        "classificacao": "Classificação",
+        "observacoes": "Observações"
+    },
+    "escolha": {
+        "caminhao": "CAMINHÃO",
+        "container": "CONTAINER",
+        "trem": "TREM"
+    },
+    "transporte": {
+        "notaFiscal": "Nota Fiscal",
+        "textobarcode": "Alinhe o código de barras na linha vermelha para a digitalização.",
+        "cliente": "Informe o Cliente",
+        "cidade": "Município de Origem",
+        "furos": "Qtde Furos",
+        "lacres": "Lacres",
+        "confirmarinfo": "Confirmar Informações",
+        "editarinfo": "Editar Informações",
+        "erroLocal": "Erro ao obter a localização: ",
+        "conectaCaixa": "Conectar a uma caixa",
+        "tipo": "Tipo"
+    },
+    "classificacao": {
+        "tipoproduto": "Tipo de Produto",
+        "umidade": "UMIDADE",
+        "impurezas": "IMPUREZAS",
+        "queimado": "QUEIMADO",
+        "ardido": "ARDIDO",
+        "mofado": "MOFADO",
+        "avariado": "AVARIADO",
+        "esverdeado": "ESVERDEADO",
+        "quebrado": "QUEBRADOS/AMASSADOS"
+    },
+    "classificador": {
+        "obs": "Observacoes",
+        "emitir": "Emitir Laudo",
+        "voltar": "Voltar"
+    },
+    "fotos": {
+        "foto": "FOTO"
+    },
+    "breve" : "Em Breve",
+    "pesquisa": {
+        "laudo": "LAUDO"
+    },
+    "laudo": {
+        "placa": "Placa",
+        "cliente": "Cliente",
+        "municipio": "Municipio",
+        "obs": "Sem Observações",
+        "auditado": "Auditado por"
+    },
+    "impressao": {
+        "selecionar": "Selecione uma impressora",
+        "nselecionar": "Nenhuma impressora",
+        "imprimir": "Imprimir",
+        "impressoras": "Impressoras",
+        "erroselect": "Erro ao selecionar impressora!",
+        "ok": "OK",
+        "conexao": "Erro na conexão!",
+        "selecionada": " selecionada",
+        "sucesso": "Impresso com sucesso!",
+        "concluir": "Concluir",
+        "voltar": "Voltar"
+    },
+    "selectOptions":{
+        "Pesquisa":{
+            "subtitulo": "Escolha um modo de Pesquisa"
+        },
+        "RecSai":{
+            "subtitulo": "Escolha entre Recebimento ou Saída"
+        },
+        "OS":{
+            "subtitulo": "Escolha uma Ordem de Serviço"
+        },
+        "Produtos":{
+            "subtitulo": "Escolha um Produto"
+        }
+    },
+    "pesoAmostra" : "PESO DA AMOSTRA",
+    "optionsPhoto" :{
+        "see"       : "Ver foto",
+        "remove"    : "Remover foto",
+        "save"      : "Salvar foto no galeria",
+        "seeError"  : "Nenhuma foto encontrada",
+        "saveOk"    : "Foto salva na galeria",
+        "saveError" : "Erro ao salvar foto na galeria",
+        "sendImageError" : "Erro ao enviar imagem ",
+        "photo"          : "Foto ",
+        "sendImage"      : " enviada com sucesso"
+    }
+}

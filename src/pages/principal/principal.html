@@ -1,0 +1,167 @@
+<ion-header>
+  <div>
+    <ion-grid class="line">
+      
+      <ion-row>
+        <ion-col class="pesquisas">
+          <ion-row class="inouts">
+            <ion-select class="inout" placeholder="&ensp;{{'pesquisar' | translate}}" interface="alert" [(ngModel)]="pesquisa" cancelText="{{'cancelText' | translate}}"
+              okText="{{'okText' | translate}}" [selectOptions]='this.funcBasicProv.selectOptions("selectOptions.Pesquisa.subtitulo","ios")' (ionChange)="test()">
+              <ion-option >&ensp;{{'principal.todos' | translate}}</ion-option>
+              <ion-option value="pEntradaSaida">&ensp;{{'principal.inout' | translate}}</ion-option>
+              <ion-option value="pLaudo">&ensp;{{'principal.laudo' | translate}}</ion-option>
+              <ion-option value="pOs">&ensp;{{'principal.os' | translate}}</ion-option>
+              <ion-option value="pData">&ensp;{{'principal.data' | translate}}</ion-option>
+              <ion-option value="pProduto">&ensp;{{'principal.produto' | translate}}</ion-option>
+            </ion-select>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="pesquisa==''">
+        <ion-col class="pesquisas">
+          <ion-row>
+            <ion-input placeholder="{{'pesquisar' | translate}}" disabled="true" (ionChange)="buscarLaudos()"></ion-input>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="pesquisa=='pEntradaSaida'">
+        <ion-col class="pesquisas">
+            <ion-select class="inout" placeholder="&ensp;{{'principal.inout' | translate}}" interface="alert" [(ngModel)]="entradaSaida"
+              cancelText="{{'cancelText' | translate}}" okText="{{'okText' | translate}}" (ionChange)="buscarLaudos()">
+              <ion-option value="1">&ensp;{{'principal.in' | translate}}</ion-option>
+              <ion-option value="0">&ensp;{{'principal.out' | translate}}</ion-option>
+            </ion-select>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="pesquisa=='pLaudo'">
+        <ion-col class="pesquisas">
+          <ion-row>
+            <ion-input type="text" placeholder="{{'principal.laudo' | translate}}" [(ngModel)]="laudo"></ion-input>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="pesquisa=='pOs'">
+        <ion-col class="pesquisas">
+          <ion-row>
+            <ion-input type="text" placeholder="{{'principal.os' | translate}}" [(ngModel)]="os"></ion-input>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="pesquisa=='pData'">
+        <ion-col class="pesquisas">
+          <ion-row>
+            <ion-datetime [(ngModel)]="data" placeholder="--/--/----" displayFormat="DD/MM/YYYY" max="{{today}}" cancelText="{{'cancelText' | translate}}"
+              doneText="{{'doneText' | translate}}" style="width: 100%; text-align: center"></ion-datetime>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+      <ion-row *ngIf="pesquisa=='pProduto'">
+        <ion-col class="pesquisas">
+          <ion-row class="inouts">
+            <ion-select class="inout" placeholder="&ensp;{{'principal.produto' | translate}}" interface="alert" [(ngModel)]="produto"
+              cancelText="{{'cancelText' | translate}}" okText="{{'okText' | translate}}" >
+              <ion-option *ngFor="let produto of produtos" [value]="produto.id">&ensp;{{produto.nome}}</ion-option>
+            </ion-select>
+          </ion-row>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+</ion-header>
+
+<ion-content>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <div *ngFor="let historico of historicos">
+    <ion-card *ngIf="historico.os == os || historico.idlaudo == laudo || historico.data == data || historico.tipo_acao == entradaSaida">
+      <ion-card-header>
+        <ion-row>
+          <ion-col col-9>
+            <ion-icon *ngIf="historico.tipo_acao=='0'" color="danger" name="ios-undo"></ion-icon>
+            <ion-icon *ngIf="historico.tipo_acao=='1'" color="select" name="ios-redo"></ion-icon>
+            {{this.dataHoje}}
+          </ion-col>
+          <ion-col align="right" col-3>
+            <ion-icon *ngIf="historico.idTransporte==1" color="black" name="ai-truck"></ion-icon>
+            <ion-icon *ngIf="historico.idTransporte==2" color="black" name="ai-train"></ion-icon>
+            <ion-icon *ngIf="historico.idTransporte==3" color="black" name="ai-container"></ion-icon>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col >
+            {{'principal.laudo' | translate}}: {{historico.idlaudo}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col >
+            {{'principal.os' | translate}}: {{historico.os}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col >
+            {{'principal.produto' | translate}}: {{historico.nome}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            {{'laudo.cliente' | translate}}: {{historico.cliente}}
+          </ion-col>
+        </ion-row>
+      </ion-card-header>
+    </ion-card>
+    <ion-card *ngIf="os == '' && laudo == '' && data == '' && entradaSaida == ''">
+        <ion-card-header>
+          <ion-row>
+            <ion-col col-9>
+              <ion-icon *ngIf="historico.tipo_acao=='0'" color="danger" name="ios-undo"></ion-icon>
+              <ion-icon *ngIf="historico.tipo_acao=='1'" color="select" name="ios-redo"></ion-icon>
+              {{this.dataHoje}}
+            </ion-col>
+            <ion-col align="right" col-3>
+              <ion-icon *ngIf="historico.idTransporte==1" color="black" name="ai-truck"></ion-icon>
+              <ion-icon *ngIf="historico.idTransporte==2" color="black" name="ai-train"></ion-icon>
+              <ion-icon *ngIf="historico.idTransporte==3" color="black" name="ai-container"></ion-icon>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col >
+              {{'principal.laudo' | translate}}: {{historico.idlaudo}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col >
+              {{'principal.os' | translate}}: {{historico.os}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col >
+              {{'principal.produto' | translate}}: {{historico.nome}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              {{'laudo.cliente' | translate}}: {{historico.cliente}}
+            </ion-col>
+          </ion-row>
+        </ion-card-header>
+      </ion-card>
+  </div>
+</ion-content>
+<ion-footer style="background-color: light;">
+  <ion-row>
+    <ion-col class="colBtn">
+      <button ion-button full class="btnExit" (click)="exit()" color="cinza">{{'principal.sair' | translate}}</button>
+    </ion-col>
+    <ion-col class="colBtn">
+      <button ion-button full class="btnNewReport" (click)="novo()">{{'principal.novolaudo' | translate}}</button>
+    </ion-col>
+  </ion-row>
+</ion-footer>

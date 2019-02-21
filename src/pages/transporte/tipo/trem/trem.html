@@ -1,0 +1,90 @@
+<ion-content padding>
+  <div>
+      <ion-grid>
+              <ion-row>
+                      <ion-col>
+                          <ion-item>
+                              <ion-input type="text" [(ngModel)]="notaFiscal" placeholder="Nota Fiscal"></ion-input>
+                          </ion-item>
+                      </ion-col>
+                      <ion-col col-auto>
+                        <button ion-button color="amspec" (click)="openScanner()"><img class="scanner" src="./assets/imgs/barcode-scanner.png" /></button>
+                      </ion-col>
+                  </ion-row>
+              <ion-row>
+              <ion-col>
+                  <ion-item class="inouts">
+                      <ion-select class="inout" placeholder="Recebimento/Saída" interface="alert" (ionChange)="change()"  cancelText="Cancelar" okText="Selecionar">
+                          <ion-option value="in">Recebimento</ion-option>
+                          <ion-option value="out">Saída</ion-option>
+                      </ion-select>  
+                  </ion-item>
+              </ion-col>  
+              <ion-col>
+                  <ion-item>
+                      <ion-input type="text" placeholder="Laudo"></ion-input>
+                  </ion-item>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <ion-item>
+                      <ion-datetime placeholder="00/00/0000" displayFormat="DD/MM/YYYY" max="{{today}}"></ion-datetime>
+                  </ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                      <ion-input type="text" placeholder="Ord. de Serviço"></ion-input>
+                  </ion-item>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <ion-item>
+                      <ion-input type="text" placeholder="Informe o Cliente"></ion-input>
+                  </ion-item>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <ion-item class="inouts">
+                      <ion-select class="inout" placeholder="Tipo de Produto" interface="alert"  [(ngModel)]="selected" (ionChange)="change($event)" (ionCancel)="cancel()" cancelText="Cancelar" okText="Selecionar">
+                          <ion-option value="soja">Soja</ion-option>
+                          <ion-option value="milho">Milho</ion-option>
+                          <ion-option value="feijaoBolinhaVermelhoInverno">Feijão Bolinha Vermelho - Inverno</ion-option>
+                          <ion-option value="feijaoBolinhaAmareloInverno">Feijão Bolinha Amarelo - Inverno</ion-option>
+                          <ion-option value="feijaoCariocaInverno">Feijão Carioca - Inverno</ion-option>
+                          <ion-option value="feijaoRajadoInverno">Feijão Rajado - Inverno</ion-option>
+                      </ion-select>  
+                  </ion-item>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <ion-item>
+                      <ion-input type="text" placeholder="Município de Origem"></ion-input>
+                  </ion-item>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <ion-item>
+                      <ion-input type="text" placeholder="AAA - 1010"></ion-input>
+                  </ion-item>
+              </ion-col>
+              <ion-col>
+                  <ion-item>
+                      <ion-input type="text" placeholder="Qtde Furos"></ion-input>
+                  </ion-item>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+                  <ion-col>
+                      <ion-item>
+                          <ion-input type="text" placeholder="Lacre ITK"></ion-input>
+                      </ion-item>
+                  </ion-col>
+              </ion-row>
+      </ion-grid>
+  </div>
+</ion-content>

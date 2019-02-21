@@ -1,0 +1,103 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@font-face{
+    @import url('https://sf.abarba.me/SF-UI-Display-Regular.otf');
+}
+   
+body,span,button,h1,h2,h3,h4,h5,h6,p,a,ion-item,ion-title,ion-card,div,ion-datetime,td,th,tr,table,thead{
+    font-family: 'SF Display', sans-serif;
+}
+
+.tabs{
+
+    .tab-button[aria-selected=true] {
+        color: #ffffff;
+    }
+
+    .tab-button[aria-selected=false] {
+        color:  rgba(255, 255, 255, 0.5);
+    }
+
+    
+}
+
+ion-footer{
+    background-color: #FFF;
+}
+
+a[aria-selected=false]{
+        
+    .tab-button-icon[ng-reflect-name=truck], .tab-button-icon[aria-label=truck] {
+        background-image: url(../assets/icon/truck_inactive.png);
+    }
+
+    .tab-button-icon[ng-reflect-name=grain], .tab-button-icon[aria-label=grain] {
+        background-image: url(../assets/icon/grain_inactive.png);
+    }
+
+    .tab-button-icon[ng-reflect-name=clipboard], .tab-button-icon[aria-label=clipboard] {
+        background-image: url(../assets/icon/clipboard_inactive.png);
+    }
+
+    .tab-button-icon {
+        background-repeat:no-repeat;
+        background-position:center;
+        height:20px;
+        width:20px;
+        background-size:contain;
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        -o-background-size: contain;
+        &:before {
+            display:none;
+        }
+    }
+
+}
+
+a[aria-selected=true] {
+    
+   .tab-button-icon[ng-reflect-name=truck], .tab-button-icon[aria-label=truck] {
+        background-image: url(../assets/icon/truck_active.png);
+   }
+
+   .tab-button-icon[ng-reflect-name=grain], .tab-button-icon[aria-label=grain] {
+        background-image: url(../assets/icon/grain_active.png);
+    }
+
+    .tab-button-icon[ng-reflect-name=clipboard], .tab-button-icon[aria-label=clipboard] {
+        background-image: url(../assets/icon/clipboard_active.png);
+    }
+
+
+   .tab-button-icon {
+        background-repeat:no-repeat;
+        background-position:center;
+        height:24px;
+        width:24px;
+        background-size:contain;
+        -webkit-background-size: contain;
+        -moz-background-size: contain;
+        -o-background-size: contain;
+        &:before {
+            display:none;
+        }
+    }
+}
+
+@import "../theme/icons";

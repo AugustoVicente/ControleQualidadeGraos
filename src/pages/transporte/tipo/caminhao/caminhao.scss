@@ -1,0 +1,26 @@
+page-caminhao {
+    .inout{
+        max-width: 100%!important;
+        width: 100%!important;
+        right: auto!important;
+        direction: ltr!important;
+        padding-left: 8px !important;
+        margin-top: 11px;
+        margin-bottom: 11px
+    }
+
+    .icon {
+        font-size: 50px;
+     }
+    .off{
+        background-color: gray;
+    }
+    
+    .button-md{
+        box-shadow: none;
+        -webkit-box-shadow: none;
+    }
+    .addicon{
+        margin-top: 5%;
+    }
+}

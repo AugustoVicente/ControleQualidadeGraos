@@ -1,0 +1,43 @@
+<ion-header no-shadow no-border>
+        <ion-card class="factors">
+                <ion-row>
+                    <ion-col>
+                        <ion-item class="inouts">
+                            <ion-select class="inout" placeholder="&ensp;{{'classificacao.tipoproduto' | translate}}" interface="alert"  
+                                [(ngModel)]="produto" cancelText="{{'cancelText' | translate}}" okText="{{'okText' | translate}}" (ionChange)="buscarFatores()"
+                                [selectOptions]='this.funcBasicProv.selectOptions("selectOptions.Produtos.subtitulo","ios")' [disabled]="this.blue.isEnabled">
+                                <ion-option *ngFor="let produto of produtos" [value]="produto.idproduto">&ensp;{{produto.nome}}</ion-option>
+                            </ion-select>
+                        </ion-item>
+                    </ion-col>
+                </ion-row>
+            </ion-card>
+</ion-header>
+<ion-content padding>
+    <div style="height: 100%;">
+        <table style="height: 100%;">
+            <tr *ngFor="let fator of fatores; let i = index;" [attr.data-index]="i" (press)="getDadosFator(fator.nome,i)">
+                <td class="factorName"><p>{{fator.nome}}</p></td>
+                <td class="factor_green" *ngIf="padrao(fator.padrao, leituras[i])"><p>{{leituras[i]}}</p></td>
+                <td class="factor_red" *ngIf="!padrao(fator.padrao, leituras[i])"><p>{{leituras[i]}}</p></td>
+                <td class="unity" *ngIf="fator.nome != funcBasicProv.buscarTraducao('pesoAmostra')">%</td>
+                <td class="unity" *ngIf="fator.nome == funcBasicProv.buscarTraducao('pesoAmostra')">g</td>
+            </tr>
+        </table>
+    </div>
+</ion-content>
+<ion-footer>
+    <ion-row *ngIf="!desabilitar">
+        <ion-col>
+            <button ion-button full (click)="enviarDados()">{{'transporte.confirmarinfo' | translate}}</button>
+        </ion-col>
+        <ion-col *ngIf="this.blue.isEnabled">
+            <button ion-button full color="cinza" (click)="connect()">{{'transporte.conectaCaixa' | translate}}</button>
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col *ngIf="desabilitar">
+            <button ion-button full color="select" (click)="editar()">{{'transporte.editarinfo' | translate}}</button>
+        </ion-col>
+    </ion-row>
+</ion-footer>

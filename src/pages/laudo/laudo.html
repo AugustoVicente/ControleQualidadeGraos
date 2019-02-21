@@ -1,0 +1,24 @@
+<ion-header color="primary" align="center">
+    <ion-navbar>
+        <ion-title>{{'impressao.imprimir' | translate}}</ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <ion-item>{{selectedPrinter.name}}</ion-item>
+    <button ion-button full (tap)="listBTDevice()">
+        {{'impressao.selecionar' | translate}}
+        <!-- Select Printer -->
+    </button>
+    <button ion-button full (click)="share()">Share WhatsApp</button>
+    <button ion-button full (tap)="testPrinter()">
+        {{'impressao.imprimir' | translate}}
+        <!-- Test Print -->
+    </button>
+</ion-content>
+<ion-footer>
+    <ion-row>
+        <ion-col>
+            <button ion-button full (click)="voltar()">{{'impressao.concluir' | translate}}</button>
+        </ion-col>
+    </ion-row>
+</ion-footer>
